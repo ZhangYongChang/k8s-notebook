@@ -272,11 +272,11 @@ Commercial support is available at
 <p><em>Thank you for using nginx.</em></p>
 </body>
 </html>
--                                            100%[===========================================================================================>]     612  --.-KB/s    用时 0s    
+-                                            100%[===========================================================================================>]     612  --.-KB/s    用时 0s
 
 2020-04-20 11:38:30 (37.8 MB/s) - 已写入至标准输出 [612/612]
 
-yczhang@yczhang:~/workspace/service$ cat service.yaml 
+yczhang@yczhang:~/workspace/service$ cat service.yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -292,7 +292,7 @@ spec:
     targetPort:  80
   type: LoadBalancer
 
-yczhang@yczhang:~/workspace/service$ 
+yczhang@yczhang:~/workspace/service$
 ```
 上面的pending在官方文档上介绍是由于定制版的minikube是没有定制LoadBalancer功能，所以上面的访问方式实际使用的是NodePort方式在访问。
 
@@ -324,7 +324,7 @@ spec:
 yczhang@yczhang:~/workspace/service$ kubectl get ingress
 NAME      HOSTS         ADDRESS          PORTS   AGE
 ingress   yczhang.k8s   192.168.99.100   80      10m
-yczhang@yczhang:~/workspace/service$ echo "$(minikube ip) mini-echo.io mini-web.io" | sudo tee -a /etc/hosts
+yczhang@yczhang:~/workspace/service$ echo "$(minikube ip) yczhang.k8s" | sudo tee -a /etc/hosts
 yczhang@yczhang:~/workspace/service$ kubectl get pods -n kube-system
 NAME                                        READY   STATUS    RESTARTS   AGE
 coredns-7f9c544f75-gvtkb                    1/1     Running   2          16h
@@ -369,7 +369,7 @@ Commercial support is available at
 <p><em>Thank you for using nginx.</em></p>
 </body>
 </html>
--                                  100%[==============================================================>]     612  --.-KB/s    用时 0s    
+-                                  100%[==============================================================>]     612  --.-KB/s    用时 0s
 
 2020-04-20 14:55:06 (66.1 MB/s) - 已写入至标准输出 [612/612]
 
