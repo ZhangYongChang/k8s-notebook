@@ -375,3 +375,5 @@ Commercial support is available at
 
 yczhang@yczhang:~/workspace/service$
 ```
+
+notice:minikube addons enable ingress

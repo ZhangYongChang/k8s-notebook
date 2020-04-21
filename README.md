@@ -10,3 +10,5 @@
 minikube start --image-mirror-country cn --iso-url=https://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/iso/minikube-v1.7.3.iso --registry-mirror=https://registry.docker-cn.com
 ```
 测试使用的平台是Ubuntu18.04
+
+minikube start --image-repository='registry.cn-hangzhou.aliyuncs.com/google_containers' --registry-mirror=https://registry.docker-cn.com
