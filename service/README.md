@@ -28,7 +28,7 @@ userspace模式下，kube-proxy 会监视 Kubernetes master 对 Service 对象�
 
 默认的策略是，通过 round-robin 算法来选择 backend Pod。
 
-![services-userspace-overview](https://github.com/ZhangYongChang/k8s-notebook/blob/master/service/services-userspace-overview.svg)
+![services-userspace-overview](./services-userspace-overview.svg)
 
 
 
@@ -45,7 +45,7 @@ iptables模式下，kube-proxy 会监视 Kubernetes 控制节点对 Service 对�
 
 您可以使用 Pod readiness 探测器 验证后端 Pod 可以正常工作，以便 iptables 模式下的 kube-proxy 仅看到测试正常的后端。 这样做意味着您避免将流量通过 kube-proxy 发送到已知已失败的Pod。
 
-![services-iptables-overview](/home/yczhang/Desktop/k8s-notebook/service/services-iptables-overview.svg)
+![services-iptables-overview](./services-iptables-overview.svg)
 
 ### IPVS 代理模式
 
@@ -53,7 +53,7 @@ ipvs 模式下，kube-proxy监视Kubernetes服务和端点，调用 netlink 接�
 
 IPVS代理模式基于类似于 iptables 模式的 netfilter 挂钩函数，但是使用哈希表作为基础数据结构，并且在内核空间中工作。 这意味着，与 iptables 模式下的 kube-proxy 相比，IPVS 模式下的 kube-proxy 重定向通信的延迟要短，并且在同步代理规则时具有更好的性能。与其他代理模式相比，IPVS 模式还支持更高的网络流量吞吐量。
 
-![services-ipvs-overview](/home/yczhang/Desktop/k8s-notebook/service/services-ipvs-overview.svg)
+![services-ipvs-overview](./services-ipvs-overview.svg)
 
 IPVS提供了更多选项来平衡后端Pod的流量。这些有：
 
