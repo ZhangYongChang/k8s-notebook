@@ -28,7 +28,7 @@ userspace模式下，kube-proxy 会监视 Kubernetes master 对 Service 对象�
 
 默认的策略是，通过 round-robin 算法来选择 backend Pod。
 
-![services-userspace-overview](/home/yczhang/Desktop/k8s-notebook/service/services-userspace-overview.svg)
+![services-userspace-overview](https://github.com/ZhangYongChang/k8s-notebook/blob/master/service/services-userspace-overview.svg)
 
 
 
